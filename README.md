@@ -1,189 +1,70 @@
-# 🔐 Three-Layer ASCII Art Security System
+# Getting Started with Create React App
 
-A novel steganographic system that combines ASCII art generation, AES encryption, and fragile watermarking for secure data transmission with tamper detection.
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## 🚀 Features
+## Available Scripts
 
-### Layer 1: ASCII Art Generation
-- Convert text and images to ASCII art
-- Multiple character sets (standard, dense, simple, dots, blocks)
-- Customizable output width and styling
-- Support for various input formats
+In the project directory, you can run:
 
-### Layer 2: Encrypted Payload Embedding
-- AES encryption for secret messages
-- Invisible character steganography
-- Data embedded in ASCII spacing patterns
-- Base64 encoding for binary data
+### `npm start`
 
-### Layer 3: Fragile Watermark + Tamper Detection ⭐ **NEW**
-- Fragile watermark using invisible Unicode characters
-- SHA-256 hash-based integrity verification
-- Tamper detection with integrity scoring
-- Real-time verification status
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-## 🏗️ Architecture
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-```
-Frontend (React.js + CSS3)
-├── ASCII Art Generation
-├── Three-Layer Security Processing
-├── Watermark Embedding/Verification
-└── Tamper Detection UI
+### `npm test`
 
-Backend (Flask + MySQL)
-├── User Management
-├── Artifact Storage
-├── Watermark Hash Storage
-└── Integrity Verification Logs
-```
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-## 📋 Prerequisites
+### `npm run build`
 
-### Frontend
-- Node.js 16+
-- npm or yarn
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-### Backend
-- Python 3.8+
-- MySQL 8.0+
-- pip
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-## 🛠️ Installation
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### Frontend Setup
-```bash
-cd frontend
-npm install
-npm start
-```
+### `npm run eject`
 
-### Backend Setup
-```bash
-cd backend
-pip install -r requirements.txt
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-# Setup MySQL database
-mysql -u root -p < setup_database.sql
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-# Start Flask server
-python app.py
-```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-## 🔄 Example Flow
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-1. **User uploads message** → AES encrypts → ciphertext
-2. **ASCII art generated** from text/image input
-3. **Ciphertext hidden** in ASCII spacing (Layer 2)
-4. **Fragile watermark hash generated** → hidden as invisible markers (Layer 3)
-5. **Receiver extracts** → verifies watermark → decrypts only if authentic
+## Learn More
 
-## 🎯 Usage
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-### Encoding (Three-Layer Security)
-1. Generate or upload ASCII art
-2. Enter secret message
-3. Set encryption key
-4. Set user key for watermarking
-5. Apply three-layer security
-6. Share the secured ASCII art
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-### Decoding (Verification & Extraction)
-1. Paste secured ASCII art
-2. Enter decryption key
-3. Enter user key for verification
-4. System verifies watermark integrity
-5. Extracts secret data if authentic
+### Code Splitting
 
-## 🛡️ Security Features
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-### Integrity Scores
-- **100%**: INTACT - No tampering detected
-- **75%**: MINOR_TAMPERING - Small modifications
-- **50%**: MODERATE_TAMPERING - Moderate changes
-- **25%**: MAJOR_TAMPERING - Significant alterations
-- **0%**: CORRUPTED - Watermark destroyed
+### Analyzing the Bundle Size
 
-### Tamper Detection
-- Real-time watermark verification
-- Hash-based integrity checking
-- Visual integrity status indicators
-- Detailed tamper analysis
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-## 🔧 Configuration
+### Making a Progressive Web App
 
-### Database Configuration (backend/app.py)
-```python
-DB_CONFIG = {
-    'host': 'localhost',
-    'database': 'ascii_security_db',
-    'user': 'root',
-    'password': 'your_password',
-    'port': 3306
-}
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
 
-### Security Settings
-- Watermark markers: Unicode invisible characters
-- Hash algorithm: SHA-256
-- Encryption: AES-256
-- Steganography: Zero-width characters
+### Advanced Configuration
 
-## 📊 Database Schema
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
 
-### ascii_artifacts
-- Stores secured ASCII art with metadata
-- Tracks integrity scores and tamper status
-- Links to user accounts
+### Deployment
 
-### verification_logs
-- Records all verification attempts
-- Maintains audit trail
-- Tracks integrity changes over time
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
 
-## 🎨 UI Features
+### `npm run build` fails to minify
 
-- **Theme Toggle**: Light/Dark mode
-- **Security Toggle**: 2-Layer/3-Layer modes
-- **Real-time Status**: Integrity indicators
-- **Export Options**: TXT, HTML, JSON formats
-- **Responsive Design**: Mobile-friendly interface
-
-## 🔍 Technical Details
-
-### Invisible Characters Used
-- `\\u2060`: Word joiner (watermark start)
-- `\\u2061`: Function application (watermark end)
-- `\\u2062`: Invisible times (bit 0)
-- `\\u2063`: Invisible separator (bit 1)
-- `\\u200B`: Zero-width space (data bit 0)
-- `\\u200C`: Zero-width non-joiner (data bit 1)
-
-### Watermark Distribution
-- Chunks distributed across ASCII lines
-- Strategic placement for maximum fragility
-- Hash verification with user key
-
-## 🚨 Security Considerations
-
-1. **User Key Management**: Keep user keys secure
-2. **Watermark Fragility**: Any modification breaks integrity
-3. **Hash Verification**: Always verify before decryption
-4. **Key Storage**: Backend stores only hashed keys
-5. **Audit Trail**: All verifications are logged
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create feature branch
-3. Commit changes
-4. Push to branch
-5. Create Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License.
-
-## 🎯 Novelty
-
-This system is no longer just steganography — it now has **integrity protection like a digital signature but inside ASCII art**, making it a unique three-layer security solution for covert communication with tamper detection.
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
